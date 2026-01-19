@@ -6,9 +6,17 @@ import { useRouter } from "next/navigation"
 import { setpassword, setusername ,login, logout} from "@/src/component/layout/store/slices/counterReducer";
 import { RootState } from "@/src/component/layout/store/store";
 import Accordions from "@/src/component/layout/Accordions";
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import Sidebar from "@/src/component/layout/Sidebar";
 const page = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   console.log('username:',username)
   console.log('password:',password)
   const router = useRouter()
@@ -25,6 +33,9 @@ const page = () => {
   
   return (
     <div style={{ height: '85vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+       <div className="w-64 fixed left-0 top-0 h-screen">
+                <Sidebar />
+            </div>
       
       <div style={{
         height: 300, width: 400, backgroundColor: '#E8E8E8', borderRadius: 20, borderWidth: '2px',
@@ -63,6 +74,20 @@ const page = () => {
           }} onClick={()=>logins()}>Login</button>
         </div>
       </div>
+       <>
+      <Button variant="primary" onClick={handleShow}>
+        Launch
+      </Button>
+
+      <Offcanvas show={show} onHide={handleClose}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          Some text.
+        </Offcanvas.Body>
+      </Offcanvas>
+    </> 
     </div>
   )
 }

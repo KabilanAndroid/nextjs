@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation"
 import { useDispatch, useSelector } from 'react-redux';
 import '../globals.css'
 import Accordion from 'react-bootstrap/Accordion'
+import Spinner from 'react-bootstrap/Spinner'
+import ProgressBar from 'react-bootstrap/ProgressBar';
 
 const page = () => {
   const userdetails = useSelector((state: RootState) => state.counter)
@@ -33,6 +35,9 @@ const page = () => {
 
   return (
     <div style={{ height: '85vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      {/* <Spinner animation="border" variant="primary" /> */}
+      {/* <p>Live</p> */}
+      <Spinner animation="grow" variant="danger" />
 
       <button style={{ backgroundColor: '#b2d5a3ff', marginLeft: 30, padding: 15 }} onClick={() => click()}>Click to share</button>
       <button style={{ backgroundColor: '#b2d5a3ff', marginLeft: 30, padding: 15 }} onClick={() => clicks()}>click </button>
@@ -42,7 +47,20 @@ const page = () => {
       <p style={{ fontSize: 30, marginLeft: 30 }}>{userdetails?.isLoggedIn}</p>
       {/* <img className="blur-none h-100 drop-shadow-xl/50" src="/images/batman.jpg" alt="Batman"  />
       <img style={{filter:'brightness(6)' ,height:400}} src="/images/batman.jpg" alt="Batman"  /> */}
-        
+        <Accordion defaultActiveKey="0">
+      <Accordion.Item eventKey="0">
+        <Accordion.Header>Accordion Item #1</Accordion.Header>
+        <Accordion.Body>
+          Lorem ipsum dolor sit
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="1">
+        <Accordion.Header>Accordion Item #2</Accordion.Header>
+        <Accordion.Body>
+          Lorem ipsum dolor sit amet.
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
     </div>
   )
 }
