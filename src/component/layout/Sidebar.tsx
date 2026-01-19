@@ -22,57 +22,47 @@ console.log("sidebar-->");
       <nav className="flex-1 p-4 space-y-3">
         <Accordion defaultActiveKey="0" alwaysOpen>
       <Accordion.Item eventKey="0">
-        <Accordion.Header>Accordion Item #1</Accordion.Header>
+        <Accordion.Header>Item-1</Accordion.Header>
         <Accordion.Body>
           <Link 
-          href="/about"
+          href="item1/sub-item1"
           className="block px-4 py-2 rounded hover:bg-gray-700 transition"
         >
-          About
+          sub-item1
+        </Link>
+          <Link 
+          href="item1/sub-item2"
+          className="block px-4 py-2 rounded hover:bg-gray-700 transition"
+        >
+          sub-item2
+        </Link>
+          <Link 
+          href="item1/sub-item3"
+          className="block px-4 py-2 rounded hover:bg-gray-700 transition"
+        >
+          sub-item3
         </Link>
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">
-        <Accordion.Header>Accordion Item #2</Accordion.Header>
+        <Accordion.Header>Item-2</Accordion.Header>
         <Accordion.Body>
          <Link 
-          href="/item1"
+          href="item2/sub-item1"
           className="block px-4 py-2 rounded hover:bg-gray-700 transition"
         >
-          item1
+          sub-item1
         </Link>
-        </Accordion.Body>
-        <Accordion.Body>
+        
          <Link 
-          href="/item2"
+          href="item2/sub-item2"
           className="block px-4 py-2 rounded hover:bg-gray-700 transition"
         >
-          item2
-        </Link>
-        </Accordion.Body>
-      </Accordion.Item>
-      <Accordion.Item eventKey="2">
-        <Accordion.Header>Accordion Item #3</Accordion.Header>
-        <Accordion.Body>
-         <Link 
-          href="/contact"
-          className="block px-4 py-2 rounded hover:bg-gray-700 transition"
-        >
-          Contact
+          sub-item2
         </Link>
         </Accordion.Body>
       </Accordion.Item>
-      <Accordion.Item eventKey="3">
-        <Accordion.Header>Accordion Item #4</Accordion.Header>
-        <Accordion.Body>
-         <Link 
-          href="/contact"
-          className="block px-4 py-2 rounded hover:bg-gray-700 transition"
-        >
-          Contact
-        </Link>
-        </Accordion.Body>
-      </Accordion.Item>
+      
     </Accordion>
         
         

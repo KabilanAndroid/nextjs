@@ -37,7 +37,7 @@ const page = () => {
     <div style={{ height: '85vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       {/* <Spinner animation="border" variant="primary" /> */}
       {/* <p>Live</p> */}
-      <Spinner animation="grow" variant="danger" />
+      <Spinner animation="grow" variant="danger" style={{backgroundColor:'#feefsdggf'}} />
 
       <button style={{ backgroundColor: '#b2d5a3ff', marginLeft: 30, padding: 15 }} onClick={() => click()}>Click to share</button>
       <button style={{ backgroundColor: '#b2d5a3ff', marginLeft: 30, padding: 15 }} onClick={() => clicks()}>click </button>

@@ -75,9 +75,7 @@ const page = () => {
         </div>
       </div>
        <>
-      <Button variant="primary" onClick={handleShow}>
-        Launch
-      </Button>
+      
 
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
