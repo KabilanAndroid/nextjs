@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation"
 import { setpassword, setusername ,login, logout} from "@/src/component/layout/store/slices/counterReducer";
 import { RootState } from "@/src/component/layout/store/store";
-
+import Accordions from "@/src/component/layout/Accordions";
 const page = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -13,24 +13,19 @@ const page = () => {
   console.log('password:',password)
   const router = useRouter()
   const dispatch = useDispatch()
-    const userdetails = useSelector((state: RootState) => state.counter)
-
+  const userdetails = useSelector((state: RootState) => state.counter)
+  
+    console.log("Redux state:", userdetails) 
   const logins = () =>{
     router.push('/'),
     dispatch(setusername(username)),
     dispatch(setpassword(password)),
     dispatch(login())
   }
-console.log("mainpage");
+  
   return (
     <div style={{ height: '85vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      {userdetails?.isLoggedIn ? 
-        <div> <main className="flex-1 flex flex-col items-center justify-center bg-gray-100 gap-6 p-4">
-        <h1 className="text-4xl font-bold">Welcome Home!</h1>
-        <p className="text-gray-700 text-lg">
-          This is your dashboard after login.
-        </p> </main></div> 
- : 
+      
       <div style={{
         height: 300, width: 400, backgroundColor: '#E8E8E8', borderRadius: 20, borderWidth: '2px',
         borderStyle: 'solid',
@@ -68,7 +63,6 @@ console.log("mainpage");
           }} onClick={()=>logins()}>Login</button>
         </div>
       </div>
-}
     </div>
   )
 }
