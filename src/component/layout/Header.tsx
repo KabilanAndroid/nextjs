@@ -9,16 +9,16 @@ export default function Header() {
       alignItems: "center",
       padding: "0 20px"
     }}>
-      {/* <Link href="/" style={{ color: "white", marginRight: "20px" }}>
+      <Link href="/mainhome" style={{ color: "white", marginRight: "20px" }}>
         Home
-      </Link> */}
-
-      {/* <Link href="/about" style={{ color: "white", marginRight: "20px" }}>
-        About
-      </Link> */}
-      <Link href="/contact" style={{ color: "white" }}>
-        main
       </Link>
+
+      <Link href="/about" style={{ color: "white", marginRight: "20px" }}>
+        About
+      </Link>
+      {/* <Link href="/contact" style={{ color: "white" }}>
+        main
+      </Link> */}
      
     </div>
   )

@@ -3,12 +3,9 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation"
-import { setpassword, setusername ,login, logout} from "@/src/component/layout/store/slices/counterReducer";
+import { setpassword, setusername ,login} from "@/src/component/layout/store/slices/counterReducer";
 import { RootState } from "@/src/component/layout/store/store";
-import Accordions from "@/src/component/layout/Accordions";
-import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import Sidebar from "@/src/component/layout/Sidebar";
 const page = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -23,7 +20,7 @@ const page = () => {
   const dispatch = useDispatch()
   const userdetails = useSelector((state: RootState) => state.counter)
   
-    console.log("Redux state:", userdetails) 
+  console.log("Redux state:", userdetails) 
   const logins = () =>{
     router.push('/'),
     dispatch(setusername(username)),
@@ -34,7 +31,7 @@ const page = () => {
   return (
     <div style={{ height: '85vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
        <div className="w-64 fixed left-0 top-0 h-screen">
-                <Sidebar />
+                
             </div>
       
       <div style={{
